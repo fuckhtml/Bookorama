@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <link href="styles.css" rel="stylesheet" />
     <title>JavaScript DOM Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
   <body>
-  
+    
     <div id="wrapper">
-  
+      
       <header>
         <div id="page-banner">
           <h1 class="title">Bookorama</h1>
@@ -20,7 +20,7 @@
           </form>
         </div>
       </header>
-  
+      
       <div id="book-list">
         <!-- comment -->
         <h2 class="title">Books to Read</h2>
@@ -43,17 +43,30 @@
           </li>
         </ul>
       </div>
-  
+      
       <form id="add-book">
         <input type="checkbox" id="hide" />
         <label for="hide">Hide all books</label>
         <input type="text" placeholder="Add a book..." />
         <button>Add</button>
       </form>
-
+      <div id="tabbed-content">
+        <ul class="tabs">
+          <li data-target="#about" class="active">About</li>
+          <li data-target="#contact">Contact</li>
+        </ul>
+        <div id="about" class="panel active">
+          <p>About</p>
+          <p>Some content goes here</p>
+        </div>
+        <div id="contact" class="panel">
+          <p>Contact</p>
+          <p>Some content goes here</p>
+        </div>
+      </div>
     </div>
-  
+    
     <script src="app.js"></script>
-  
+    
   </body>
 </html>

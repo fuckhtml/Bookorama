@@ -1,4 +1,6 @@
 
+// delete books
+
 const ulBookListNode = document.querySelector('#book-list ul');
 
 ulBookListNode.addEventListener('click', function(event) {
@@ -7,6 +9,8 @@ ulBookListNode.addEventListener('click', function(event) {
 		li.parentElement.removeChild(li);
 	}
 });
+
+// add books
 
 const formAddBookNode = document.forms['add-book'];
 
@@ -33,6 +37,8 @@ formAddBookNode.addEventListener('submit', function(event) {
 	inputTextNode.value = '';
 });
 
+// hide books
+
 const inputHideBooksNode = document.querySelector('#hide');
 
 inputHideBooksNode.addEventListener('change', function(event) {
@@ -43,6 +49,8 @@ inputHideBooksNode.addEventListener('change', function(event) {
 		console.dir(ulBookListNode);
 	}
 });
+
+// filter books
 
 const formSearchBooksNode = document.forms['search-books'];
 const inputSearchBooksNode = formSearchBooksNode.querySelector('input[type="text"]');
@@ -75,3 +83,21 @@ inputSearchBooksNode.addEventListener('keyup', function(event) {
 	}
 
 });
+
+// tabbed content
+
+const tabs = document.querySelector('.tabs');
+const panels = document.querySelectorAll('.panel');
+
+tabs.addEventListener('click', function(e) {
+	if (e.target.tagName == 'LI') {
+		const targetPanel = document.querySelector(e.target.dataset.target);
+		panels.forEach( function(panel) {
+			if (panel == targetPanel) {
+				panel.classList.add('active');
+			} else {
+				panel.classList.remove('active');
+			}
+		});
+	}
+})
